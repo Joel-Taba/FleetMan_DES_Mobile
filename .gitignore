@@ -39,3 +39,21 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# local configuration (copy .env.example to .env)
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+logs/
+
+# signing material
+*.keystore
+*.crt
+*.cer
+
+# local tooling and screenshots
+.claude/
+shots/

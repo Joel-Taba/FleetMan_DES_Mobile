@@ -1,25 +1,72 @@
 {
   "expo": {
-    "name": "fleetman-driver-mobile",
+    "name": "FleetMan Chauffeur",
     "slug": "fleetman-driver-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yowyob.fleetman.driver"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0A2334",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.yowyob.fleetman.driver"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single",
+      "name": "FleetMan Chauffeur",
+      "shortName": "FleetMan",
+      "themeColor": "#0A2334",
+      "backgroundColor": "#0A2334"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F1F6FB",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "dark": {
+            "backgroundColor": "#0A2334",
+            "image": "./assets/splash-icon.png"
+          }
+        }
+      ],
+      "expo-image",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "FleetMan uses your photos to set your profile picture and attach pictures to your declarations.",
+          "cameraPermission": "FleetMan uses the camera to photograph incidents, fuel receipts and vehicle damage."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "FleetMan uses your location during a trip to record stops and arrivals and, if you agree, to share your live position with your fleet manager."
+        }
+      ],
+      "expo-sharing",
+      "@react-native-community/datetimepicker"
+    ],
+    "scheme": "fleetman",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "description": "FleetMan driver app: trips, vehicle, declarations.",
+    "backgroundColor": "#0A2334"
   }
 }
